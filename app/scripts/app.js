@@ -32,7 +32,8 @@ angular.module('templateStoreApp', ['ui.router', 'ngResource'])
                         controller  : 'TemplateDetController'
                     }
                 }
-            })
+            });
+
             $urlRouterProvider.otherwise('/');
       })
 ;

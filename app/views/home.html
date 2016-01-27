@@ -1,10 +1,12 @@
 <div class="row templates" ng-controller="IndexController">
-	<div ng-repeat="template in templates">
+	<div>
 		<div class="col-md-4">
-			<h3>{{template.name}}</h3>
+			<h3>{{templates[0].name}}</h3>
 			<img src="images/blue.jpg">
 			<h4>Template Price</h4>
 			<a class="btn btn-primary btn-block" ui-sref="app.templatedetails({id: id})">Details</a>
 		</div>
 	</div>
 </div>
+
+{{templates}}

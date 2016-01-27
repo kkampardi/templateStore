@@ -1,20 +1,16 @@
-'use_strict'
+'use_strict';
 
 angular.module('templateStoreApp')
 
-  .controller('IndexController', ['$scope', 'templateFactory',
-  function($scope, templateFactory){
-    console.log("index view :) ");
-    $scope.message = "Loading ...";
-    templateFactory.getTemplates()
-    .then(
-          function(response){
-            $scope.templates = response.data;
-          }
-        );
-  }])
+  .controller('IndexController', ['$scope', '$http', function($scope, $http){
+    console.log("Template Controller");
+   	$http.get('json/templates.json').success(function(data){
+      		$scope.templates = data;
+          console.log($scope.templates);
+      	});
+    }])
 
   .controller('TemplateDetController', ['$scope', function($scope){
-      console.log("Template Details controller :)");
+        console.log("Template Details controller :)");
     }])
-;
+  ;
